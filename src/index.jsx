@@ -18,8 +18,8 @@ const App = () => {
     [],
   );
 
-  const handleZahlasovano = () => {
-    setPresident(true);
+  const handleZahlasovano = (jmeno) => {
+    setPresident(jmeno);
   };
 
   return (
@@ -29,9 +29,7 @@ const App = () => {
         <div className="castle__body">
           <h1>Nový prezident</h1>
           <p className="castle__president">
-            {president === false
-              ? 'Vyberte svého kandidáta'
-              : 'Děkujeme za hlasování'}
+            {president === null ? 'Vyberte svého kandidáta' : president}
           </p>
         </div>
       </div>
@@ -43,7 +41,7 @@ const App = () => {
             key={c.name}
             name={c.name}
             avatar={c.avatar}
-            zahlasovano={handleZahlasovano}
+            onZahlasovano={handleZahlasovano}
           />
         ))}
       </div>

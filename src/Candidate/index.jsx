@@ -3,7 +3,7 @@ import './style.css';
 
 const Candidate = (props) => {
   const handleClick = () => {
-    props.zahlasovano();
+    props.onZahlasovano(props.name);
   };
 
   return (
